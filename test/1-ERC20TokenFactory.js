@@ -1,12 +1,10 @@
 const { expect } = require('chai');
 
 describe('ERC20Token Factory', () => {
-    let owner;
 
     beforeEach(async () => {
         ERC20TokenFactory = await ethers.getContractFactory('ERC20TokenFactory');
         eRC20TokenFactory = await ERC20TokenFactory.deploy();
-        owner = await ethers.getSigners();
     });
 
     describe('Minting ERC20 Token', () => {
