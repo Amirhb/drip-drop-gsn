@@ -1,10 +1,13 @@
 {
-  "name": "drip-drop",
+  "name": "drip-drop-gsn",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ganache": "ganache",
+    "gsn-with-ganache": "run-with-testrpc -d --chainId 1337 'gsn start'",
+    "deploy-with-ganache": "npx hardhat run scripts/deploy.js --network gsn",
+    "test": "npx hardhat test --network gsn"
   },
   "keywords": [],
   "author": "",
@@ -13,12 +16,19 @@
     "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@nomiclabs/hardhat-ganache": "^2.0.1",
     "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "@openzeppelin/contracts": "^4.9.3",
     "chai": "^4.3.7",
     "ethereum-waffle": "^4.0.10",
-    "ethers": "^5.7.0",
-    "hardhat": "^2.15.0"
+    "ethers": "^5.4",
+    "hardhat": "^2.17.1"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.9.1"
+    "@opengsn/cli": "^3.0.0-beta.6",
+    "@opengsn/contracts": "^3.0.0-beta.6",
+    "@opengsn/dev": "^3.0.0-beta.6",
+    "@opengsn/paymasters": "^3.0.0-beta.6",
+    "@opengsn/provider": "^3.0.0-beta.6",
+    "run-with-testrpc": "^0.3.1",
+    "web3-providers-http": "^1.7.1"
   }
 }
